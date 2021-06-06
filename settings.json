@@ -1,0 +1,26 @@
+{
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}",
+    },
+    "python.pythonPath":"C:\Users\naveen.gedela\AppData\Local\Microsoft\WindowsApps\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "workbench.colorCustomizations": {
+        "editorUnnecessaryCode.border": "#2e4a52"
+    },
+    "python.formatting.autopep8Args": [
+        "--max-line-length=125"
+    ],
+    "workbench.editor.enablePreview": false,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.pytest_cache": true
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+}
