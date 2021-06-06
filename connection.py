@@ -1,16 +1,25 @@
-from getpass import getpass
-from os import close
-from mysql.connector import connect, Error
+import mysql.connector
+from mysql.connector import Error
 
-try:
-    with connect(host="localhost", user="root", password="Lodestone#123") as connection:
-        create_db_query = "CREATE DATABASE online_movie_rating"
-        connection.reconnect()
-    with connection.cursor() as cursor:
-        cursor.execute(create_db_query)
-        
-except Error as e:
-    print(e)
-    print(connection)
-finally:
-    connection.close()
+
+def connect():
+    """ Connect to MySQL database """
+    conn = None
+    try:
+        conn = mysql.connector.connect(host='localhost',
+                                       database='python_mysql',
+                                       user='root',
+                                       password='Lodestone#123')
+        if conn.is_connected():
+            print('Connected to MySQL database')
+
+    except Error as e:
+        print(e)
+
+    finally:
+        if conn is not None and conn.is_connected():
+            conn.close()
+
+
+if __name__ == '__main__':
+    connect()
